@@ -10,7 +10,7 @@ func NewTimeOutHttpClient(dailTimeout, readTimeout, writeTimeout time.Duration) 
     // TODO: Check valid
     transport := &http.Transport{
         Dial: func(network, addr string) (net.Conn, error) {
-            c, err := net.DialTimout(network, addr, dailTimeout)
+            c, err := net.DialTimeout(network, addr, dailTimeout)
             if err != nil {
                 return nil, err
             }
